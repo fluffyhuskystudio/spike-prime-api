@@ -13,5 +13,5 @@ To use it, simply download and place both hub and spike folders and place them u
   <br>yourcode.py
 
 ## Credits
-spike module is based on https://github.com/sanjayseshan/spikeprime-tools/blob/master/spiketools/hub/spike.py, which was created by @jeffdamp and @sanjayseshan (Thanks!)
+spike module is based on https://github.com/sanjayseshan/spikeprime-tools/blob/master/spiketools/hub/spike.py, which was created by @jeffdamp and @sanjayseshan (Thanks!)<br>
 hub module is created by myself based on the document shared at https://lego.github.io/MINDSTORMS-Robot-Inventor-hub-API/
