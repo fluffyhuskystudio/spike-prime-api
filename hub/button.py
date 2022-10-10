@@ -1,5 +1,6 @@
 from typing import Callable
 
+
 class Button:
     """
     Provides access to button state and callback.
@@ -11,8 +12,8 @@ class Button:
         """
         Gets the state of the button.
 
-        Returns
-        True if it is pressed, False otherwise.
+        ### Returns
+        - True if it is pressed, False otherwise.
         """
         pass
 
@@ -20,8 +21,8 @@ class Button:
         """
         Checks if this button was pressed since this method was last called.
 
-        Returns
-        True if it was pressed at least once since the previous call, False otherwise.
+        ### Returns
+        - True if it was pressed at least once since the previous call, False otherwise.
         """
         pass
 
@@ -29,8 +30,8 @@ class Button:
         """
         Gets the number of times this button was pressed since this method was last called.
 
-        Returns
-        The number of presses since the last call.
+        ### Returns
+        - The number of presses since the last call.
         """
         pass
 
@@ -44,12 +45,13 @@ class Button:
 
         Otherwise, the button is now released. The value represents how many milliseconds it was pressed before it was released.
 
-        Parameters
-        function - Callable function that takes one argument. Choose None to disable the callback.
+        ### Parameters
+        - `function` - Callable function that takes one argument. Choose None to disable the callback.
         """
         pass
 
-left = Button() #The left button.
-right = Button() #The right button.
-center = Button() #The center button.
-connect = Button() #The button with the Bluetooth symbol.
+
+left: Button  # The left button.
+right: Button  # The right button.
+center: Button  # The center button.
+connect: Button  # The button with the Bluetooth symbol.

@@ -13,11 +13,11 @@ def volume(volume: int) -> None:
     """
     Sets the volume of the speaker.
 
-    Parameters
-    Volume - Volume between 0 (no sound) and 10 (maximum volume).
+    ### Parameters
+    - volume - Volume between 0 (no sound) and 10 (maximum volume).
 
-    Returns
-    If no argument is given, this returns the current volume.
+    ### Returns
+    - If no argument is given, this returns the current volume.
     """
     pass
 
@@ -25,12 +25,10 @@ def beep(freq=1000, time=1000, waveform=0) -> None:
     """
     Starts beeping with a given frequency, duration, and wave form.
 
-    Keyword Arguments
-    freq - Frequency of the beep in Hz (100 - 10000).
-
-    time - Duration of the beep in milliseconds (0 - 32767).
-
-    waveform - Wave form used for the beep. See constants for all possible values.
+    ### Keyword Arguments
+    - `freq` - Frequency of the beep in Hz (100 - 10000).
+    - `time` - Duration of the beep in milliseconds (0 - 32767).
+    - `waveform` - Wave form used for the beep. See constants for all possible values.
     """
     pass
 
@@ -40,14 +38,14 @@ def play(filename: str, rate=16000) -> None:
 
     The sound file must be raw 16 bit data at 16 kHz.
 
-    Parameters
-    filename - Absolute path to the sound file.
+    ### Parameters
+    - `filename` - Absolute path to the sound file.
 
-    Keyword Arguments
-    rate - Playback speed in Hz.
+    ### Keyword Arguments
+    - `rate` - Playback speed in Hz.
 
-    Raises
-    OSError (ENOENT) - If the file does not exist.
+    ### Raises
+    - `OSError (ENOENT)` - If the file does not exist.
     """
     pass
 
@@ -61,8 +59,8 @@ def callback(self, function: Callable[[int], None]) -> None:
 
     If the value is 1, the sound was interrupted.
 
-    Parameters
-    function - Callable function that takes one argument. Choose None to disable the callback.
+    ### Parameters
+    - `function` - Callable function that takes one argument. Choose None to disable the callback.
     """
     pass
 

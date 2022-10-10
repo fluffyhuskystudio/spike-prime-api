@@ -4,8 +4,8 @@ def voltage() -> int:
     """
     Gets the battery voltage.
 
-    Returns
-    The voltage in mV.
+    ### Returns
+    - The voltage in mV.
     """
     pass
 
@@ -13,8 +13,8 @@ def current() -> int:
     """
     Gets current flowing out of the battery.
 
-    Returns
-    The current in in mA.
+    ### Returns
+    - The current in in mA.
     """
     pass
 
@@ -22,8 +22,8 @@ def capacity_left() -> int:
     """
     Gets the remaining capacity as a percentage of a fully charged battery.
 
-    Returns
-    The remaining battery capacity.
+    ### Returns
+    - The remaining battery capacity.
     """
     pass
 
@@ -31,8 +31,8 @@ def temperature() -> float:
     """
     Gets the temperature of the battery.
 
-    Returns
-    The temperature in degrees Celsius.
+    ### Returns
+    - The temperature in degrees Celsius.
     """
     pass
 
@@ -40,8 +40,8 @@ def charger_detect() -> Union[bool, int]:
     """
     Checks what type of charger was detected.
 
-    Returns
-    See charging constants for all possible return values. Returns False if it failed to detect a charger.
+    ### Returns
+    - See charging constants for all possible return values. Returns False if it failed to detect a charger.
     """
     pass
 
@@ -51,6 +51,7 @@ def info() -> dict:
 
     This returns a dictionary of the form:
 
+    ```
     {
         # Battery measurements as documented above.
         'battery_capacity_left': 100
@@ -67,8 +68,9 @@ def info() -> dict:
         # Charging state. See constants given below.
         'charger_state': 2,
     }
-    Returns
-    Battery status information.
+    ```
+    ### Returns
+    - Battery status information.
     """
     pass
 

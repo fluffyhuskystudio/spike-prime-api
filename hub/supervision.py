@@ -10,6 +10,7 @@ def info() -> dict:
 
     This returns a dictionary of the form:
 
+    ```
     {
         # Checks if the peak current is too high.
         'peek_current_too_high': False,
@@ -23,8 +24,9 @@ def info() -> dict:
         # Checks if the hub temperature is too high.
         'temperature_too_high': False
     }
-    Returns
-    Supervision status information.
+    ```
+    ### Returns
+    - Supervision status information.
     """
     pass
 
@@ -34,7 +36,7 @@ def callback(self, function: Callable[[int], None]) -> None:
 
     The function must accept one argument, which indicates the current in mA that triggered the callback.
 
-    Parameters
-    function - Callable function that takes one argument. Choose None to disable the callback.
+    ### Parameters
+    - `function` - Callable function that takes one argument. Choose None to disable the callback.
     """
     pass

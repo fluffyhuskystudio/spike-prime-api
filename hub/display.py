@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import Callable, Iterable
 
 """
@@ -9,20 +10,20 @@ class Image:
         """
         Create a new image object for use with the hub.display.show() function.
 
-            Image(string: str)
-            Image(width: int, height: int)
-            Image(width: int, height: int, buffer: bytes)
+        ```
+        Image(string: str)
+        Image(width: int, height: int)
+        Image(width: int, height: int, buffer: bytes)
+        ```
 
         You can use one of the signatures above to initialize an image, depending on what you need.
 
-        Parameters
-        string - String of the form "00900:09990:99999:09990:09090:", representing the brightness of each pixel (0 to 9). Pixels are listed row by row, separated by a colon (:) or line break (\n).
-
-        width - Number of pixels in one row of the new image.
-
-        height - Number of pixels in one column of the new image.
-
-        buffer - Bytes representing the brightness values of each pixel in the new image. The buffer size must be equal to width * height. If you give a with and height but no buffer, you will get an image where all pixels are zero.
+        ### Parameters
+        
+        - `string` - String of the form "00900:09990:99999:09990:09090:", representing the brightness of each pixel (0 to 9). Pixels are listed row by row, separated by a colon (:) or line break (\\n).
+        - `width` - Number of pixels in one row of the new image.
+        - `height` - Number of pixels in one column of the new image.
+        - `buffer` - Bytes representing the brightness values of each pixel in the new image. The buffer size must be equal to width * height. If you give a with and height but no buffer, you will get an image where all pixels are zero.
         """
         pass
 
@@ -42,11 +43,11 @@ class Image:
         """
         Shifts the image to the left.
 
-        Parameters
-        n - By how many pixels to shift the image.
+        ### Parameters
+        - `n1 - By how many pixels to shift the image.
 
-        Returns
-        A new, shifted image.
+        ### Returns
+        - A new, shifted image.
         """
         pass
 
@@ -54,11 +55,11 @@ class Image:
         """
         Shifts the image to the right.
 
-        Parameters
-        n - By how many pixels to shift the image.
+        ### Parameters
+        - `n` - By how many pixels to shift the image.
 
-        Returns
-        A new, shifted image.
+        ### Returns
+        - A new, shifted image.
         """
         pass
 
@@ -66,11 +67,11 @@ class Image:
         """
         Shifts the image up.
 
-        Parameters
-        n - By how many pixels to shift the image.
+        ### Parameters
+        - `n` - By how many pixels to shift the image.
 
-        Returns
-        A new, shifted image.
+        ### Returns
+        - A new, shifted image.
         """
         pass
 
@@ -78,11 +79,11 @@ class Image:
         """
         Shifts the image down.
 
-        Parameters
-        n - By how many pixels to shift the image.
+        ### Parameters
+        - `n` - By how many pixels to shift the image.
 
-        Returns
-        A new, shifted image.
+        ### Returns
+        - A new, shifted image.
         """
         pass
 
@@ -90,13 +91,12 @@ class Image:
         """
         Gets the brightness of one pixel in the image.
 
-        Parameters
-        x - Pixel position counted from the left, starting at zero.
+        ### Parameters
+        - `x` - Pixel position counted from the left, starting at zero.
+        - `y` - Pixel position counted from the top, starting at zero.
 
-        y - Pixel position counted from the top, starting at zero.
-
-        Returns
-        Brightness (0-9) of the requested pixel.
+        ### Returns
+        - Brightness (0-9) of the requested pixel.
         """
         pass
 
@@ -104,89 +104,86 @@ class Image:
         """
         Sets the brightness of one pixel in the image.
 
-        Parameters
-        x - Pixel position counted from the left, starting at zero.
+        ### Parameters
+        - `x` - Pixel position counted from the left, starting at zero.
+        - `y` - Pixel position counted from the top, starting at zero.
+        - `brightness` - Brightness between 0 (fully off) and 9 (fully on).
 
-        y - Pixel position counted from the top, starting at zero.
-
-        brightness - Brightness between 0 (fully off) and 9 (fully on).
-
-        Raises
-        ValueError - If x or y are negative or larger than the image size.
-
-        TypeError - If you try to modify a built-in image such as HEART.
+        ### Raises
+        - `ValueError` - If x or y are negative or larger than the image size.
+        - `TypeError` - If you try to modify a built-in image such as HEART.
         """
         pass
 
-    ANGRY = None
-    ARROW_E = None
-    ARROW_N = None
-    ARROW_NE = None
-    ARROW_NW = None
-    ARROW_S = None
-    ARROW_SE = None
-    ARROW_SW = None
-    ARROW_W = None
-    ASLEEP = None
-    BUTTERFLY = None
-    CHESSBOARD = None
-    CLOCK1 = None
-    CLOCK2 = None
-    CLOCK3 = None
-    CLOCK4 = None
-    CLOCK5 = None
-    CLOCK6 = None
-    CLOCK7 = None
-    CLOCK8 = None
-    CLOCK9 = None
-    CLOCK10 = None
-    CLOCK11 = None
-    CLOCK12 = None
-    CONFUSED = None
-    COW = None
-    DIAMOND = None
-    DIAMOND_SMALL = None
-    DUCK = None
-    FABULOUS = None
-    GHOST = None
-    GIRAFFE = None
-    GO_DOWN = None
-    GO_LEFT = None
-    GO_RIGHT = None
-    GO_UP = None
-    HAPPY = None
-    HEART = None
-    HEART_SMALL = None
-    HOUSE = None
-    MEH = None
-    MUSIC_CROTCHET = None
-    MUSIC_QUAVER = None
-    MUSIC_QUAVERS = None
-    NO = None
-    PACMAN = None
-    PITCHFORK = None
-    RABBIT = None
-    ROLLERSKATE = None
-    SAD = None
-    SILLY = None
-    SKULL = None
-    SMILE = None
-    SNAKE = None
-    SQUARE = None
-    SQUARE_SMALL = None
-    STICKFIGURE = None
-    SURPRISED = None
-    SWORD = None
-    TARGET = None
-    TORTOISE = None
-    TRIANGLE = None
-    TRIANGLE_LEFT = None
-    TSHIRT = None
-    UMBRELLA = None
-    XMAS = None
-    YES = None
-    ALL_CLOCKS = None
-    ALL_ARROWS = None        
+    ANGRY: Image
+    ARROW_E: Image
+    ARROW_N: Image
+    ARROW_NE: Image
+    ARROW_NW: Image
+    ARROW_S: Image
+    ARROW_SE: Image
+    ARROW_SW: Image
+    ARROW_W: Image
+    ASLEEP: Image
+    BUTTERFLY: Image
+    CHESSBOARD: Image
+    CLOCK1: Image
+    CLOCK2: Image
+    CLOCK3: Image
+    CLOCK4: Image
+    CLOCK5: Image
+    CLOCK6: Image
+    CLOCK7: Image
+    CLOCK8: Image
+    CLOCK9: Image
+    CLOCK10: Image
+    CLOCK11: Image
+    CLOCK12: Image
+    CONFUSED: Image
+    COW: Image
+    DIAMOND: Image
+    DIAMOND_SMALL: Image
+    DUCK: Image
+    FABULOUS: Image
+    GHOST: Image
+    GIRAFFE: Image
+    GO_DOWN: Image
+    GO_LEFT: Image
+    GO_RIGHT: Image
+    GO_UP: Image
+    HAPPY: Image
+    HEART: Image
+    HEART_SMALL: Image
+    HOUSE: Image
+    MEH: Image
+    MUSIC_CROTCHET: Image
+    MUSIC_QUAVER: Image
+    MUSIC_QUAVERS: Image
+    NO: Image
+    PACMAN: Image
+    PITCHFORK: Image
+    RABBIT: Image
+    ROLLERSKATE: Image
+    SAD: Image
+    SILLY: Image
+    SKULL: Image
+    SMILE: Image
+    SNAKE: Image
+    SQUARE: Image
+    SQUARE_SMALL: Image
+    STICKFIGURE: Image
+    SURPRISED: Image
+    SWORD: Image
+    TARGET: Image
+    TORTOISE: Image
+    TRIANGLE: Image
+    TRIANGLE_LEFT: Image
+    TSHIRT: Image
+    UMBRELLA: Image
+    XMAS: Image
+    YES: Image
+    ALL_CLOCKS: Image
+    ALL_ARROWS: Image
 
 #Built-in images
 Image.ANGRY = Image('90009:09090:00000:99999:90909:')
@@ -289,11 +286,11 @@ def align(face: int) -> int:
     """
     Rotates the display by aligning the top with the given face of the hub.
 
-    Parameters
-    face - Choose hub.FRONT, hub.BACK, hub.LEFT, or hub.RIGHT.
+    ### Parameters
+    - `face` - Choose hub.FRONT, hub.BACK, hub.LEFT, or hub.RIGHT.
 
-    Returns
-    The new or current alignment.
+    ### Returns
+    - The new or current alignment.
     """
     pass
 
@@ -306,11 +303,11 @@ def invert(invert: bool) -> bool:
 
     In the inverted state, the brightness of each pixel is the opposite of the normal state. If a pixel has brightness b, it will be displayed with brightness 9 - b.
 
-    Parameters
-    invert - Choose True to activate the inverted state. Choose False to restore the normal state.
+    ### Parameters
+    - `invert` - Choose True to activate the inverted state. Choose False to restore the normal state.
 
-    Returns
-    The new or current inversion state.
+    ### Returns
+    - The new or current inversion state.
     """
     pass
 
@@ -320,8 +317,8 @@ def callback(self, function: Callable[[int], None]) -> None:
 
     The function must accept one argument, which indicates why the callback was called. It will receive 0 if a display operation completed successfully, or 1 if it was interrupted.
 
-    Parameters
-    function - Callable function that takes one argument. Choose None to disable the callback.
+    ### Parameters
+    - `function` - Callable function that takes one argument. Choose None to disable the callback.
     """
     pass
 
@@ -332,15 +329,13 @@ def pixel(x: int, y: int, brightness: int) -> None:
     """
     Gets or sets the brightness of one pixel.
 
-    Parameters
-    x - Pixel position counted from the left, starting at zero.
+    ### Parameters
+    - `x` - Pixel position counted from the left, starting at zero.
+    - `y` - Pixel position counted from the top, starting at zero.
+    - `brightness` - Brightness between 0 (fully off) and 9 (fully on).
 
-    y - Pixel position counted from the top, starting at zero.
-
-    brightness - Brightness between 0 (fully off) and 9 (fully on).
-
-    Returns
-    If no brightness is given, this returns the brightness of the selected pixel. Otherwise it returns None.
+    ### Returns
+    - If no brightness is given, this returns the brightness of the selected pixel. Otherwise it returns None.
     """
     pass
 
@@ -353,21 +348,16 @@ def show(image: Iterable[Image], delay=400, level=9, clear=False, wait=True, loo
 
     Except for image, all arguments must be specified as keywords.
 
-    Parameters
-    image - The image or iterable of images to be displayed.
+    ### Parameters
+    - `image` - The image or iterable of images to be displayed.
 
-    Keyword Arguments
-    delay - Delay between each image in the iterable.
-
-    level - Scales the brightness of each pixel in and image or character to a value between 0 (fully off) and 9 (fully on).
-
-    clear - Choose True to clear the display after showing the last image in the iterable.
-
-    wait - Choose True to block your program until all images are shown. Choose False to show all images in the background while your program continues.
-
-    loop - Choose True repeat the sequence of images for ever. Choose False to show it only once.
-
-    fade -
+    ### Keyword Arguments
+    - `delay` - Delay between each image in the iterable.
+    - `level` - Scales the brightness of each pixel in and image or character to a value between 0 (fully off) and 9 (fully on).
+    - `clear` - Choose `True` to clear the display after showing the last image in the iterable.
+    - `wait` - Choose `True` to block your program until all images are shown. Choose `False` to show all images in the background while your program continues.
+    - `loop` - Choose `True` repeat the sequence of images for ever. Choose `False` to show it only once.
+    - `fade` -
 
     Sets the transitional behavior between images in the sequence:
 

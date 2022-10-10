@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import Tuple, overload
 from hub import port, battery, bluetooth, button, display, motion, sound, supervision
 from hub.display import Image
 
@@ -21,21 +21,26 @@ def status() -> dict:
 def temperature() -> float:
     pass
 
+@overload
 def power_off(fast=True, restart=False):
     pass
 
+@overload
 def power_off(timeout=0):
     pass
 
 def repl_restart(restart: bool):
     pass
 
+@overload
 def led(color: int):
     pass
 
+@overload
 def led(red: int, green: int, blue: int):
     pass
 
+@overload
 def led(color: Tuple[int, int, int]):
     pass
 
