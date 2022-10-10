@@ -1,10 +1,12 @@
-from typing import Callable
+from typing import Callable, overload
 
 #The Bluetooth module.
 
+@overload
 def discoverable() -> int:
     pass
 
+@overload
 def discoverable(time: int):
     """
     Gets or sets the Bluetooth classic discoverability state.
@@ -17,9 +19,11 @@ def discoverable(time: int):
     """
     pass
 
+@overload
 def rfcomm_connect() -> str:
     pass
 
+@overload
 def rfcomm_connect(address: str) -> bool:
     """
     Connects to a Bluetooth Classic MAC address.
@@ -95,9 +99,11 @@ def forget(address) -> bool:
     """
     pass
 
+@overload
 def lwp_advertise() -> int:
     pass
 
+@overload
 def lwp_advertise(timeout: int):
     """
     Gets or sets the Bluetooth Low Energy LEGO Wireless protocol advertising state.
@@ -110,9 +116,11 @@ def lwp_advertise(timeout: int):
     """
     pass
 
+@overload
 def lwp_bypass() -> bool:
     pass
 
+@overload
 def lwp_bypass(bypass: bool):
     """
     Controls whether the LEGO Wireless Protocol is bypassed when using Bluetooth Low Energy.

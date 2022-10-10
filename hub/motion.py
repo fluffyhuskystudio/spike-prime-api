@@ -1,4 +1,5 @@
 from typing import Tuple, Callable
+from typing import overload
 
 def accelerometer(filtered=False) -> Tuple[int, int, int]:
     """
@@ -24,12 +25,15 @@ def gyroscope(filtered=False) -> Tuple[int, int, int]:
     """
     pass
 
+@overload
 def align_to_model(top: int, front: int) -> None:
     pass
 
+@overload
 def align_to_model(nsamples: int, callback: Callable[[int], None]) -> None:
     pass
 
+@overload
 def align_to_model(top: int, front: int, nsamples: int, callback: Callable[[int], None]) -> None:
     """
     Sets the default hub orientation and/or calibrates the gyroscope.
@@ -38,10 +42,11 @@ def align_to_model(top: int, front: int, nsamples: int, callback: Callable[[int]
 
     Changing the model alignment affects most other methods in this module. They will now be relative to the hub alignment that you specify.
 
-    Keyword Arguments
-    top - Which hub side is at the top of your model. See the hub constants for all possible values.
+    #### Keyword Arguments
+    
+    `top` - Which hub side is at the top of your model. See the hub `constants` for all possible values.
 
-    front - Which hub side is on the front of your model.
+    `front` - Which hub side is on the front of your model.
 
     nsamples - Number of samples for calibration between 0 and 10000. It is 100 by default.
 
@@ -49,12 +54,15 @@ def align_to_model(top: int, front: int, nsamples: int, callback: Callable[[int]
     """
     pass
 
+@overload
 def yaw_pitch_roll() -> Tuple[int, int, int]:
     pass
 
+@overload
 def yaw_pitch_roll(yaw_preset: int) -> None:
     pass
 
+@overload
 def yaw_pitch_roll(yaw_correction: float) -> None:
     """
     Gets the yaw, pitch, and roll angles of the hub, or resets the yaw.
@@ -81,24 +89,28 @@ def yaw_pitch_roll(yaw_correction: float) -> None:
     """
     pass
 
+@overload
 def orientation() -> int:
     pass
 
+@overload
 def orientation(callback: Callable[[int], None]) -> int:
     """
     Gets which hub side of the hub is mostly pointing up.
 
     Keyword Arguments
     callback - Function that will be called when the orientation changes. It must accept one argument, which will tell you which hub side is up. Choose None to disable the callback. This is the default.
-
+    
     Returns
     Number representing which side is up. See hub constants for all possible values.
     """
     pass
 
+@overload
 def gesture() -> int:
     pass
 
+@overload
 def gesture(callback: Callable[[int], None]) -> int:
     """
     Gets the most recent gesture that the hub has made since this function was last called.

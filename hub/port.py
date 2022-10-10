@@ -1,4 +1,4 @@
-from typing import Callable, Union, Optional, Iterable, Tuple
+from typing import Callable, Union, Optional, Iterable, Tuple, overload
 
 class Pin:
     def __init__(self):
@@ -48,15 +48,19 @@ class Device:
         """
         pass
 
+    @overload
     def mode(self, mode: int):
         pass
 
+    @overload
     def mode(self, mode: int, data: bytes):
         pass
 
+    @overload
     def mode(self, mode: Iterable[Tuple[int, int]]):
         pass
 
+    @overload
     def mode(self) -> Iterable[Tuple[int, int]]:
         pass
 
@@ -109,9 +113,11 @@ class Motor(Device):
         """
         pass
 
+    @overload
     def run_at_speed(self, speed: int):
         pass
 
+    @overload
     def run_at_speed(self, speed: int, max_power: int, acceleration: int, deceleration: int, stall: bool):
         """
         Starts running a motor at the given speed.
@@ -132,9 +138,11 @@ class Motor(Device):
         """
         pass
 
+    @overload
     def run_for_time(self, msec: int):
         pass
 
+    @overload
     def run_for_time(self, msec: int, speed: int, max_power: int, stop: int, acceleration: int, deceleration: int, stall: bool):
         """
         Runs a motor for a given amount of time.
@@ -159,9 +167,11 @@ class Motor(Device):
         """
         pass
 
+    @overload
     def run_for_degrees(self, degrees: int):
         pass
 
+    @overload
     def run_for_degrees(self, degrees: int, speed: int, max_power: int, stop: int, acceleration: int, deceleration: int, stall: bool):
         """
         Runs a motor for a given number of degrees at a given speed.
@@ -196,9 +206,11 @@ class Motor(Device):
         """
         pass
 
+    @overload
     def run_to_position(self, position: int):
         pass
 
+    @overload
     def run_to_position(self, position: int, speed: int, max_power: int, stop: int, acceleration: int, deceleration: int, stall: bool):
         """
         Runs a motor to the given position.
@@ -245,9 +257,11 @@ class Motor(Device):
         """
         pass
 
+    @overload
     def pid(self) -> tuple:
         pass
 
+    @overload
     def pid(self, p: int, i: int, d: int):
         """
         Sets the p, i, and d constants of the motor PID controller.
@@ -264,9 +278,11 @@ class Motor(Device):
         """
         pass
 
+    @overload
     def default(self) -> dict:
         pass
-
+    
+    @overload
     def default(self, speed: int, max_power: int, acceleration: int, deceleration: int, stop: int, pid: tuple, stall: bool, callback: Optional[Callable[[int], None]]):
         """
         Gets or sets the motor default settings. These are used by some of the methods listed above, when no explicit argument is given.
@@ -342,28 +358,36 @@ class MotorPair():
 
     def pwm(self, pwm_0: int, pwm_1: int):
         pass
-
+    
+    @overload
     def run_at_speed(self, speed_0: int, speed_1: int):
         pass
 
+    @overload
     def run_at_speed(self, speed_0: int, speed_1: int, max_power: int, acceleration: int, deceleration: int):
         pass
 
+    @overload
     def run_for_time(self, msec: int):
         pass
 
+    @overload
     def run_for_time(self, msec: int, speed_0: int, speed_1: int, max_power: int, acceleration: int, deceleration: int, stop: int):
         pass
 
+    @overload
     def run_for_degrees(self, degrees: int):
         pass
 
+    @overload
     def run_for_degrees(self, degrees: int, speed_0: int, speed_1: int, max_power: int, acceleration: int, deceleration: int, stop: int):
         pass
 
+    @overload
     def run_to_position(self, position_0: int, position_1: int):
         pass
 
+    @overload
     def run_to_position(self, position_0: int, position_1: int, speed: int, max_power: int, acceleration: int, deceleration: int, stop: int):
         pass
 

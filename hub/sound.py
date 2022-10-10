@@ -1,13 +1,15 @@
-from typing import Callable
+from typing import Callable, overload
 
 """
 The sound module lets you control the hub speaker to play sound files and beeps.
 """
 
-def volume(volume: int) -> None:
+@overload
+def volume() -> int:
     pass
 
-def volume() -> int:
+@overload
+def volume(volume: int) -> None:
     """
     Sets the volume of the speaker.
 
